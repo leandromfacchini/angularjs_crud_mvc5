@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "angularjs_crud_mvc5", "angularjs_crud_mvc5\angularjs_crud_mvc5.csproj", "{8C8A353A-55C8-46A2-8A2C-F92AB3D08BE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "angularjs_crud_mvc5.Entidades", "angularjs_crud_mvc5.Entidades\angularjs_crud_mvc5.Entidades.csproj", "{CCC377C1-D126-40DB-A1FC-5FAB77AEC8F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "angularjs_crud_mvc5.Business", "angularjs_crud_mvc5.Business\angularjs_crud_mvc5.Business.csproj", "{AA091E39-4D1C-4E6B-9E87-F914667939CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C8A353A-55C8-46A2-8A2C-F92AB3D08BE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C8A353A-55C8-46A2-8A2C-F92AB3D08BE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C8A353A-55C8-46A2-8A2C-F92AB3D08BE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C8A353A-55C8-46A2-8A2C-F92AB3D08BE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCC377C1-D126-40DB-A1FC-5FAB77AEC8F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCC377C1-D126-40DB-A1FC-5FAB77AEC8F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCC377C1-D126-40DB-A1FC-5FAB77AEC8F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCC377C1-D126-40DB-A1FC-5FAB77AEC8F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA091E39-4D1C-4E6B-9E87-F914667939CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA091E39-4D1C-4E6B-9E87-F914667939CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA091E39-4D1C-4E6B-9E87-F914667939CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA091E39-4D1C-4E6B-9E87-F914667939CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A7673C7-3138-4A2A-9D53-0971840136A9}
+	EndGlobalSection
+EndGlobal
