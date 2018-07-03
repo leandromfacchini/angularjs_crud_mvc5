@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "angularjs_crud_mvc5.Entidad
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "angularjs_crud_mvc5.Business", "angularjs_crud_mvc5.Business\angularjs_crud_mvc5.Business.csproj", "{AA091E39-4D1C-4E6B-9E87-F914667939CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "angularjs_crud_mvc5.Models", "angularjs_crud_mvc5.Models\angularjs_crud_mvc5.Models.csproj", "{B0BEE0DB-866B-4DFB-B4F4-B0EF269C87D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{AA091E39-4D1C-4E6B-9E87-F914667939CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA091E39-4D1C-4E6B-9E87-F914667939CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA091E39-4D1C-4E6B-9E87-F914667939CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0BEE0DB-866B-4DFB-B4F4-B0EF269C87D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0BEE0DB-866B-4DFB-B4F4-B0EF269C87D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0BEE0DB-866B-4DFB-B4F4-B0EF269C87D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0BEE0DB-866B-4DFB-B4F4-B0EF269C87D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

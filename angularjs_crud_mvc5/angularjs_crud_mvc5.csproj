@@ -148,6 +148,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\FuncionariosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -201,6 +202,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Funcionario\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -214,6 +216,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\angularjs_crud_mvc5.Business\angularjs_crud_mvc5.Business.csproj">
+      <Project>{aa091e39-4d1c-4e6b-9e87-f914667939ce}</Project>
+      <Name>angularjs_crud_mvc5.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\angularjs_crud_mvc5.Entidades\angularjs_crud_mvc5.Entidades.csproj">
+      <Project>{CCC377C1-D126-40DB-A1FC-5FAB77AEC8F2}</Project>
+      <Name>angularjs_crud_mvc5.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\angularjs_crud_mvc5.Models\angularjs_crud_mvc5.Models.csproj">
+      <Project>{B0BEE0DB-866B-4DFB-B4F4-B0EF269C87D9}</Project>
+      <Name>angularjs_crud_mvc5.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
