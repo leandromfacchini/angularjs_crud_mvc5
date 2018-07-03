@@ -156,6 +156,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AngularJsApp\Funcionario\Controller.js" />
+    <Content Include="AngularJsApp\Funcionario\Module.js" />
+    <Content Include="AngularJsApp\Funcionario\Service.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
