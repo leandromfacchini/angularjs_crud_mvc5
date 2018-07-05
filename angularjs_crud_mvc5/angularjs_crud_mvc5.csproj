@@ -225,10 +225,6 @@
       <Project>{aa091e39-4d1c-4e6b-9e87-f914667939ce}</Project>
       <Name>angularjs_crud_mvc5.Business</Name>
     </ProjectReference>
-    <ProjectReference Include="..\angularjs_crud_mvc5.Entidades\angularjs_crud_mvc5.Entidades.csproj">
-      <Project>{CCC377C1-D126-40DB-A1FC-5FAB77AEC8F2}</Project>
-      <Name>angularjs_crud_mvc5.Entidades</Name>
-    </ProjectReference>
     <ProjectReference Include="..\angularjs_crud_mvc5.Models\angularjs_crud_mvc5.Models.csproj">
       <Project>{B0BEE0DB-866B-4DFB-B4F4-B0EF269C87D9}</Project>
       <Name>angularjs_crud_mvc5.Models</Name>

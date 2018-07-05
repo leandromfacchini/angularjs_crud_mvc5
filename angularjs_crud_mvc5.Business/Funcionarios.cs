@@ -15,32 +15,64 @@ namespace angularjs_crud_mvc5.Business
         {
             string serializer = string.Empty;
 
-            using (Entities db = new Entities())
+            try
             {
-                var consulta = db.Funcionario.ToList();
-
-                List<ModelFuncionario> funcionarios = new List<ModelFuncionario>();
-
-                for (int i = 0; i < consulta.Count(); i++)
+                using (Entities db = new Entities())
                 {
-                    var func = consulta[i];
+                    var consulta = db.Funcionario.ToList();
 
-                    ModelFuncionario funcionario = new ModelFuncionario();
-                    funcionario.FuncionarioId = func.FuncionarioId;
-                    funcionario.Cargo = func.Cargo;
-                    funcionario.Departamento = func.Departamento;
-                    funcionario.Email = func.Email;
-                    funcionario.Nome = func.Nome;
+                    List<ModelFuncionario> funcionarios = new List<ModelFuncionario>();
 
-                    funcionarios.Add(funcionario);
+                    for (int i = 0; i < consulta.Count(); i++)
+                    {
+                        var func = consulta[i];
+
+                        ModelFuncionario funcionario = new ModelFuncionario();
+                        funcionario.FuncionarioId = func.FuncionarioId;
+                        funcionario.Cargo = func.Cargo;
+                        funcionario.Departamento = func.Departamento;
+                        funcionario.Email = func.Email;
+                        funcionario.Nome = func.Nome;
+
+                        funcionarios.Add(funcionario);
+
+                    }
+
+                    serializer = new JavaScriptSerializer().Serialize(funcionarios);
 
                 }
-
-                serializer = new JavaScriptSerializer().Serialize(funcionarios);
-
             }
+            catch (Exception ex)
+            { }
 
             return serializer;
+        }
+
+        public bool Adicionar(ModelFuncionario funcionario)
+        {
+            bool ret = false;
+
+            try
+            {
+                using (Entities db = new Entities())
+                {
+                    Funcionario func = new Funcionario();
+                    func.FuncionarioId = funcionario.FuncionarioId;
+                    func.Cargo = funcionario.Cargo;
+                    func.Departamento = funcionario.Departamento;
+                    func.Email = funcionario.Email;
+                    func.Nome = funcionario.Nome;
+
+                    db.Funcionario.Add(func);
+
+                    db.SaveChanges();
+                    ret = true;
+                }
+            }
+            catch (Exception ex)
+            { }
+
+            return ret;
         }
     }
 }

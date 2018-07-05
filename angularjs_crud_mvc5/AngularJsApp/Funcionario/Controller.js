@@ -11,6 +11,8 @@ funcionarioApp.controller('funcionarioCtrl', function ($scope, funcionarioServic
 
             $scope.funcionarios = d.data;
 
+            console.log(d.data);
+
         }, function () {
 
             alert('Ocorreu um erro ao tentar listar todos os funcionários !');

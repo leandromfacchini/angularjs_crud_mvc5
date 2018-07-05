@@ -1,10 +1,6 @@
 ﻿using angularjs_crud_mvc5.Business;
-using angularjs_crud_mvc5.Entidades;
 using angularjs_crud_mvc5.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
 
@@ -29,9 +25,18 @@ namespace angularjs_crud_mvc5.Controllers
         }
 
         // GET: Funcionario/Create
-        public ActionResult Create()
+        public JsonResult Create(ModelFuncionario funcionario)
         {
-            return View();
+            bool json = false;
+
+            Funcionarios funcionarios = new Funcionarios();
+
+            if (funcionario != null)
+            {
+                json = funcionarios.Adicionar(funcionario);
+            }
+
+            return Json(new { sucess = json });
         }
 
         // POST: Funcionario/Create
