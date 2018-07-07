@@ -8,7 +8,7 @@ namespace angularjs_crud_mvc5.Controllers
 {
     public class FuncionariosController : Controller
     {
-        // GET: Funcionario
+        // GET: Funcionarios
         public JsonResult Index()
         {
             var consulta = new Funcionarios();
@@ -24,7 +24,8 @@ namespace angularjs_crud_mvc5.Controllers
             return View();
         }
 
-        // GET: Funcionario/Create
+        // POST: Funcionario/Create
+        [HttpPost]
         public JsonResult Create(ModelFuncionario funcionario)
         {
             bool json = false;
@@ -37,22 +38,6 @@ namespace angularjs_crud_mvc5.Controllers
             }
 
             return Json(new { sucess = json });
-        }
-
-        // POST: Funcionario/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
         }
 
         // GET: Funcionario/Edit/5
