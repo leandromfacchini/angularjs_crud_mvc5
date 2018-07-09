@@ -48,40 +48,38 @@ namespace angularjs_crud_mvc5.Controllers
 
         // POST: Funcionario/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public JsonResult Edit(ModelFuncionario funcionario)
         {
-            try
-            {
-                // TODO: Add update logic here
+            // TODO: Add update logic here
+            bool json = false;
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+            Funcionarios funcionarios = new Funcionarios();
 
-        // GET: Funcionario/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
+            if (funcionario != null)
+            {
+                json = funcionarios.Atualizar(funcionario);
+
+            }
+
+            return Json(new { sucess = json });
+
         }
 
         // POST: Funcionario/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public JsonResult Delete(int FuncionarioId)
         {
-            try
-            {
-                // TODO: Add delete logic here
+            bool json = false;
 
-                return RedirectToAction("Index");
-            }
-            catch
+            if (FuncionarioId > 0)
             {
-                return View();
+                var funcionarios = new Funcionarios();
+
+                json = funcionarios.Deletar(FuncionarioId);
+
             }
+
+            return Json(new { sucess = json });
         }
     }
 }

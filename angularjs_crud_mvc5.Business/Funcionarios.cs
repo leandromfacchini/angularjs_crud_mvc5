@@ -74,5 +74,59 @@ namespace angularjs_crud_mvc5.Business
 
             return ret;
         }
+
+        public bool Deletar(int funcionarioId)
+        {
+            bool ret = false;
+
+            try
+            {
+                using (Entities db = new Entities())
+                {
+                    var consulta = db.Funcionario.Where(c => c.FuncionarioId.Equals(funcionarioId)).FirstOrDefault();
+
+                    if (consulta != null)
+                    {
+                        db.Funcionario.Remove(consulta);
+                        db.SaveChanges();
+
+                        ret = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            { }
+
+            return ret;
+        }
+
+        public bool Atualizar(ModelFuncionario funcionario)
+        {
+            bool ret = false;
+
+            try
+            {
+                using (Entities db = new Entities())
+                {
+                    var consulta = db.Funcionario.Where(c => c.FuncionarioId.Equals(funcionario.FuncionarioId)).FirstOrDefault();
+
+                    if (consulta != null)
+                    {
+                        consulta.Cargo = funcionario.Cargo;
+                        consulta.Departamento = funcionario.Departamento;
+                        consulta.Email = funcionario.Email;
+                        consulta.Nome = funcionario.Nome;
+
+                        db.SaveChanges();
+
+                        ret = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            { }
+
+            return ret;
+        }
     }
 }

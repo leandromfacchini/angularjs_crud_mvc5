@@ -50,6 +50,90 @@ funcionarioApp.controller('funcionarioCtrl', function ($scope, funcionarioServic
         );
     }
 
+    $scope.atualizarFuncionarioId = function (funcionario) {
+
+        $scope.AtualizadoFuncionarioId = funcionario.FuncionarioId;
+        $scope.AtualizadoNome = funcionario.Nome;
+        $scope.AtualizadoEmail = funcionario.Email;
+        $scope.AtualizadoDepartamento = funcionario.Departamento;
+        $scope.AtualizadoCargo = funcionario.Cargo;
+
+    }
+
+    $scope.atualizarFuncionario = function (funcionario) {
+
+        var funcionario = {
+
+            FuncionarioId: $scope.AtualizadoFuncionarioId,
+            Nome: $scope.AtualizadoNome,
+            Email: $scope.AtualizadoEmail,
+            Departamento: $scope.AtualizadoDepartamento,
+            Cargo: $scope.AtualizadoCargo,
+
+        }
+
+        var atualizar = funcionarioService.updateFuncionario(funcionario);
+
+        atualizar.then(function (d) {
+
+            if (d.data.sucess == true) {
+
+                carregarFuncionario();
+
+                alert('Funcionário atualizado com sucesso');
+
+                $scope.limparDadosAtualizado();
+
+            } else {
+
+                alert('Funcionário não atualizado !!');
+
+            }
+        }, function () {
+
+            alert('Erro ao tentar atualizar dados !!');
+
+        });
+    }
+
+    $scope.deletarFuncionario = function (AtualizadoFuncionarioId) {
+
+        var excluir = funcionarioService.deletarFuncionario($scope.AtualizadoFuncionarioId);
+
+        excluir.then(function (d) {
+
+            if (d.data.sucess == true) {
+
+                carregarFuncionario();
+
+                alert('Funcionário excluído com sucesso !!');
+
+                $scope.limparDadosAtualizado();
+
+            } else {
+
+                alert('Funcionário não excluído !!');
+
+            }
+
+        }, function () {
+
+            alert('Erro ao excluir funcionário !!');
+
+        });
+    };
+
+
+    $scope.limparDadosAtualizado = function () {
+
+        $scope.AtualizadoFuncionarioId = '';
+        $scope.AtualizadoNome = '';
+        $scope.AtualizadoEmail = '';
+        $scope.AtualizadoDepartamento = '';
+        $scope.AtualizadoCargo = '';
+
+    }
+
     $scope.limparDados = function () {
 
         $scope.FuncionarioId = '';
@@ -57,6 +141,7 @@ funcionarioApp.controller('funcionarioCtrl', function ($scope, funcionarioServic
         $scope.Email = '';
         $scope.Departamento = '';
         $scope.Cargo = '';
+
     }
 
 });

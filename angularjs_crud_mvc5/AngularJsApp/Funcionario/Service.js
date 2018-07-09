@@ -17,4 +17,21 @@ funcionarioApp.service('funcionarioService', function ($http) {
         return request;
     }
 
+    this.updateFuncionario = function (funcionario) {
+
+        var request = $http({
+            method: 'POST',
+            url: '/Funcionarios/Edit',
+            data: funcionario
+        });
+
+        return request;
+    }
+
+    this.deleteFuncionario = function (funcionarioId) {
+
+        return $http.post('/Funcionarios/Delete/' + funcionarioId);
+
+    }
+
 });
