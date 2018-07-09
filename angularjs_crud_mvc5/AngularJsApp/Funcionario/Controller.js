@@ -20,7 +20,7 @@ funcionarioApp.controller('funcionarioCtrl', function ($scope, funcionarioServic
         });
     }
 
-    $scrope.adicionarFuncionario = function () {
+    $scope.adicionarFuncionario = function () {
 
         var funcionario = {
             FuncionarioId: $scope.FuncionarioId,
@@ -30,15 +30,17 @@ funcionarioApp.controller('funcionarioCtrl', function ($scope, funcionarioServic
             Cargo: $scope.Cargo,
         };
 
-        var adicionarInfos = funcionarioService.adicionarFuncionario(funcionario);
+        var adicionarInfos = funcionarioService.createFuncionario(funcionario);
 
         adicionarInfos.then(function (d) {
 
-            if (d.data.success == true) {
+            if (d.data.sucess == true) {
 
                 alert('Adicionado com sucesso');
 
                 $scope.limparDados();
+
+                carregarFuncionario();
 
             } else alert('Erro ao incluir !');
         },
@@ -50,12 +52,11 @@ funcionarioApp.controller('funcionarioCtrl', function ($scope, funcionarioServic
 
     $scope.limparDados = function () {
 
-        $scope.FuncionarioId = '',
-            $scope.Nome = '',
-            $scope.Email = '',
-            $scope.Departamento = '',
-            $scope.Cargo = '',
-
+        $scope.FuncionarioId = '';
+        $scope.Nome = '';
+        $scope.Email = '';
+        $scope.Departamento = '';
+        $scope.Cargo = '';
     }
 
 });

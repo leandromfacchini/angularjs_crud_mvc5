@@ -6,7 +6,7 @@ funcionarioApp.service('funcionarioService', function ($http) {
         return $http.get("/Funcionarios/Index");
     }
 
-    this.createFuncionario = function () {
+    this.createFuncionario = function (funcionario) {
 
         var request = $http({
             method: 'POST',
