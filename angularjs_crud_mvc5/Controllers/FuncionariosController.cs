@@ -67,15 +67,15 @@ namespace angularjs_crud_mvc5.Controllers
 
         // POST: Funcionario/Delete/5
         [HttpPost]
-        public JsonResult Delete(int FuncionarioId)
+        public JsonResult Delete(int id)
         {
             bool json = false;
 
-            if (FuncionarioId > 0)
+            if (id > 0)
             {
                 var funcionarios = new Funcionarios();
 
-                json = funcionarios.Deletar(FuncionarioId);
+                json = funcionarios.Deletar(id);
 
             }
 

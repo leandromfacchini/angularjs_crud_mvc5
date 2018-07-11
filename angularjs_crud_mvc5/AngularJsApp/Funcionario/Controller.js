@@ -96,9 +96,19 @@ funcionarioApp.controller('funcionarioCtrl', function ($scope, funcionarioServic
         });
     }
 
-    $scope.deletarFuncionario = function (AtualizadoFuncionarioId) {
+    $scope.excluirFuncionarioId = function (funcionario) {
 
-        var excluir = funcionarioService.deletarFuncionario($scope.AtualizadoFuncionarioId);
+        $scope.ExcluidoFuncionarioId = funcionario.FuncionarioId;
+        $scope.ExcluidoNome = funcionario.Nome;
+        $scope.ExcluidoEmail = funcionario.Email;
+        $scope.ExcluidoDepartamento = funcionario.Departamento;
+        $scope.ExcluidoCargo = funcionario.Cargo;
+
+    }
+
+    $scope.deletarFuncionario = function (ExcluidoFuncionarioId) {
+
+        var excluir = funcionarioService.deleteFuncionario($scope.ExcluidoFuncionarioId);
 
         excluir.then(function (d) {
 
@@ -123,7 +133,6 @@ funcionarioApp.controller('funcionarioCtrl', function ($scope, funcionarioServic
         });
     };
 
-
     $scope.limparDadosAtualizado = function () {
 
         $scope.AtualizadoFuncionarioId = '';
@@ -131,6 +140,16 @@ funcionarioApp.controller('funcionarioCtrl', function ($scope, funcionarioServic
         $scope.AtualizadoEmail = '';
         $scope.AtualizadoDepartamento = '';
         $scope.AtualizadoCargo = '';
+
+    }
+
+    $scope.limparDadosExcluido = function () {
+
+        $scope.ExcluidoFuncionarioId = '';
+        $scope.ExcluidoNome = '';
+        $scope.ExcluidoEmail = '';
+        $scope.ExcluidoDepartamento = '';
+        $scope.ExcluidoCargo = '';
 
     }
 

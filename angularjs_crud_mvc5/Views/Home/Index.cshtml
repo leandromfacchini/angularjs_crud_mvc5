@@ -35,7 +35,7 @@
                 <td>{{func.Cargo}}</td>
                 <td style="width:200px">
                     <a href="#" title="Atualizar" data-target="#AtualizarFuncionario" data-toggle="modal" class="btn btn-success" ng-click="atualizarFuncionarioId(func)"><i class="glyphicon glyphicon-floppy-save"></i></a>
-                    <a href="#" title="Excluir" data-target="#ExcluirFuncionario" data-toggle="modal" class="btn btn-danger"><i class="glyphicon glyphicon-floppy-remove"></i></a>
+                    <a href="#" title="Excluir" data-target="#ExcluirFuncionario" data-toggle="modal" class="btn btn-danger" ng-click="excluirFuncionarioId(func)"><i class="glyphicon glyphicon-floppy-remove"></i></a>
                 </td>
             </tr>
         </tbody>
@@ -112,6 +112,44 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-success" id="btnSalvar" data-dismiss="modal" ng-click="atualizarFuncionario()">Salvar</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="limparDadosAtualizado()">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*Modal de exclusão de funcionário*@
+    <div class="modal" id="ExcluirFuncionario" role="dialog">
+        <div class="modal-dialog">
+            <div class=" modal-content">
+                <div class="modal-header">
+                    <h3 class="text-info">Excluir Funcionário</h3>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" name="ExcluirFuncionarioForm">
+                        <div class="form-group">
+                            <input class="form-control" readonly="readonly" name="FuncionarioId" ng-model="ExcluidoFuncionarioId" placeholder="Id do Funcionário" />
+                        </div>
+
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="Nome" ng-model="ExcluidoNome" placeholder="Nome..." />
+                        </div>
+
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="Email" ng-model="ExcluidoEmail" placeholder="Email..." />
+                        </div>
+
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="Departamento" ng-model="ExcluidoDepartamento" placeholder="Departamento" />
+                        </div>
+
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="Cargo" ng-model="ExcluidoCargo" placeholder="Cargo..." />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="btnExcluir" data-dismiss="modal" ng-click="deletarFuncionario(ExcluidoFuncionarioId)">Excluir</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="limparDadosExcluido()">Fechar</button>
                 </div>
             </div>
         </div>
